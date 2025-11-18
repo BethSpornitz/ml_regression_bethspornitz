@@ -1,55 +1,66 @@
-# applied-ml-template
-
-> Use this repo to start a professional Python project.
-
-- Additional instructions: See the [pro-analytics-02](https://denisecase.github.io/pro-analytics-02/) guide.
-- Project organization: [STRUCTURE](./STRUCTURE.md)
-- Build professional skills:
-  - **Environment Management**: Every project in isolation
-  - **Code Quality**: Automated checks for fewer bugs
-  - **Documentation**: Use modern project documentation tools
-  - **Testing**: Prove your code works
-  - **Version Control**: Collaborate professionally
+# Final Project – Medical Insurance Cost Regression  
+**Author:** Beth Spornitz  
+**Date:** November 18, 2025  
 
 ---
 
-## About this Repository
+## Overview  
+This repository contains my final machine learning regression project.
 
-Starter files for the example labs:
+The goal of this project is to build and evaluate models that predict medical insurance charges using demographic and lifestyle features. The workflow includes:
 
-- notebooks/example01 folder
-- notebooks/example02 folder
-
-## Folders for Projects
-
-Each project will be completed in its own folder.
-
-- notebooks/project01 folder:
-  - ml01.ipynb - COMPLETE THIS
-  - ml01.py - working script with just the code
-  - README.md - instructions - modify this to present your lab project
+- Data exploration  
+- Feature engineering  
+- Linear Regression  
+- Scaled & Polynomial Pipelines  
+- Model comparison  
+- Final insights & reflections  
 
 ---
 
-## WORKFLOW 1. Set Up Machine
+## Dataset Information
 
-Proper setup is critical.
-Complete each step in the following guide and verify carefully.
-
-- [SET UP MACHINE](./SET_UP_MACHINE.md)
+| Field | Description |
+|-------|-------------|
+| **Dataset Name** | Medical Insurance Dataset |
+| **Source** | Kaggle |
+| **File** | `data/insurance.csv` |
+| **Target Variable** | `charges` (continuous) |
 
 ---
 
-## WORKFLOW 2. Set Up Project
+## 🔗 Project Files
 
-After verifying your machine is set up, set up a new Python project by copying this template.
-Complete each step in the following guide.
+| File Type | Link |
+|-----------|-------|
+| 📓 Notebook | **[Regression Notebook – Insurance Charges](notebooks/regression_final/regression_bethspornitz.ipynb)** |
+| 📝 Peer Review | **[Peer Review Submission](peer_review.md)** |
 
-- [SET UP PROJECT](./SET_UP_PROJECT.md)
+---
 
-It includes the critical commands to set up your local environment (and activate it):
+## 🛠 Workflow 1 – Set Up Machine
 
-```shell
+Make sure the following tools are installed:
+
+- VS Code  
+- Python 3.12  
+- uv  
+- Git  
+- VS Code Extensions: Python, Jupyter, Ruff, Pylance  
+
+---
+
+## 🛠 Workflow 2 – Set Up Project
+
+### 2.1 Clone the Repository
+
+```bash
+git clone https://github.com/BethSpornitz/ml_regression_bethspornitz
+```
+
+### 2.2 Create and Activate Virtual Environment
+
+```bash
 uv venv
 uv python pin 3.12
 uv sync --extra dev --extra docs --upgrade
@@ -57,127 +68,106 @@ uv run pre-commit install
 uv run python --version
 ```
 
-**Windows (PowerShell):**
+Activate:
 
-```shell
-.\.venv\Scripts\activate
-```
-
-**macOS / Linux / WSL:**
-
-```shell
-source .venv/bin/activate
+```bash
+.\.venv\Scripts\activate   # Windows
+# or
+source .venv/bin/activate # macOS/Linux
 ```
 
 ---
 
-## WORKFLOW 3. Daily Workflow
+## 🛠 Workflow 3 – Daily Workflow
 
-Please ensure that the prior steps have been verified before continuing.
-When working on a project, we open just that project in VS Code.
-
-### 3.1 Git Pull from GitHub
-
-Always start with `git pull` to check for any changes made to the GitHub repo.
-
-```shell
-git pull
-```
-
-### 3.2 Run Checks as You Work
-
-This mirrors real work where we typically:
-
-1. Update dependencies (for security and compatibility).
-2. Clean unused cached packages to free space.
-3. Use `git add .` to stage all changes.
-4. Run ruff and fix minor issues.
-5. Update pre-commit periodically.
-6. Run pre-commit quality checks on all code files (**twice if needed**, the first pass may fix things).
-7. Run tests.
-
-In VS Code, open your repository, then open a terminal (Terminal / New Terminal) and run the following commands one at a time to check the code.
-
-```shell
+```bash
 git pull
 uv sync --extra dev --extra docs --upgrade
-uv cache clean
-git add .
 uvx ruff check --fix
-uvx pre-commit autoupdate
 uv run pre-commit run --all-files
 git add .
-uv run pytest
+git commit -m "Update regression project"
 ```
-
-NOTE: The second `git add .` ensures any automatic fixes made by Ruff or pre-commit are included before testing or committing.
-Running `uv run pre-commit run --all-files` twice may be helpful if the first time doesn't pass. 
-
-<details>
-<summary>Click to see a note on best practices</summary>
-
-`uvx` runs the latest version of a tool in an isolated cache, outside the virtual environment.
-This keeps the project light and simple, but behavior can change when the tool updates.
-For fully reproducible results, or when you need to use the local `.venv`, use `uv run` instead.
-
-</details>
-
-### 3.3 Build Project Documentation
-
-Make sure you have current doc dependencies, then build your docs, fix any errors, and serve them locally to test.
-
-```shell
-uv run mkdocs build --strict
-uv run mkdocs serve
-```
-
-- After running the serve command, the local URL of the docs will be provided. To open the site, press **CTRL and click** the provided link (at the same time) to view the documentation. On a Mac, use **CMD and click**.
-- Press **CTRL c** (at the same time) to stop the hosting process.
-
-### 3.4 Execute
-
-This project includes demo code.
-Run the demo Python modules to confirm everything is working.
-
-In VS Code terminal, run:
-
-```shell
-uv run python notebooks/project01/ml01.py
-```
-
-A new window with charts should appear. Close the window to finish the execution. 
-If this works, your project is ready! If not, check:
-
-- Are you in the right folder? (All terminal commands are to be run from the root project folder.)
-- Did you run the full `uv sync --extra dev --extra docs --upgrade` command?
-- Are there any error messages? (ask for help with the exact error)
-
-## Update this README as you work
-
-Add commands to run additional scripts as you work through the course (update the path and file name as needed).
 
 ---
 
-### 3.5 Git add-commit-push to GitHub
+## 🛠 Workflow 4 – Save and Push Work
 
-Anytime we make working changes to code is a good time to git add-commit-push to GitHub.
-
-1. Stage your changes with git add.
-2. Commit your changes with a useful message in quotes.
-3. Push your work to GitHub.
-
-```shell
+```bash
 git add .
-git commit -m "describe your change in quotes"
+git commit -m "Final regression update"
 git push -u origin main
 ```
 
-This will trigger the GitHub Actions workflow and publish your documentation via GitHub Pages.
+---
 
-### 3.6 Modify and Debug
+# Project – Predicting Medical Insurance Charges
 
-With a working version safe in GitHub, start making changes to the code.
+This project walks through the complete regression workflow:
 
-Before starting a new session, remember to do a `git pull` and keep your tools updated.
+### 🔬 Key Steps
+| Section | Description |
+|---------|-------------|
+| **1** | Import & Inspect Data |
+| **2** | Data Exploration, Cleaning & Feature Engineering |
+| **3** | Feature Selection & Justification |
+| **4** | Baseline Linear Regression |
+| **5** | Scaled Pipeline & Polynomial Pipeline |
+| **6** | Final Thoughts & Reflection |
 
-Each time forward progress is made, remember to git add-commit-push.
+---
+
+## Model Performance Summary
+
+### Baseline Linear Regression
+| Metric | Value |
+|--------|--------|
+| Train R² | 0.750 |
+| Test R² | 0.787 |
+| Test MAE | ~$4,204 |
+| Test RMSE | ~$5,745 |
+
+### Pipeline 1 – Scaled Linear Regression  
+*Identical to baseline (as expected)*
+
+### Pipeline 2 – Polynomial (Degree 3)
+| Metric | Value |
+|--------|--------|
+| Train R² | 0.883 |
+| Test R² | 0.860 |
+| Test MAE | ~$2,758 |
+| Test RMSE | ~$4,662 |
+
+### Key Insight
+✔ **Polynomial Regression performed best**  
+✔ Captured nonlinear patterns in age, BMI, and smoking  
+✔ Scaling alone did not impact performance  
+✔ Mild overfitting but strong generalization  
+
+---
+
+## 🧪 Engineered Features Used
+- `bmi_over_30` (obesity indicator)  
+- `age_squared` (nonlinear age effects)  
+- `age_bmi_interaction`  
+- `smoker_bmi_interaction`  
+- `smoker_age_interaction`  
+- `has_children`  
+
+---
+
+## 📁 Repository Structure
+
+| File | Purpose |
+|------|---------|
+| `notebooks/regression_final/regression_bethspornitz.ipynb` 
+| `notebooks/data/insurance.csv` 
+| `notebooks/peer_review.md` 
+| `README.md` 
+
+---
+
+## 🧾 Acknowledgements  
+- Instructor: **Dr. Denise Case**  
+- Dataset Source: **Kaggle – Insurance Dataset**  
+- Tools Used: Python, uv, pandas, scikit-learn, Jupyter, VS Code, Git  
