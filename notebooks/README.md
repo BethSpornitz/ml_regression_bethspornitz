@@ -33,8 +33,9 @@ The goal of this project is to build and evaluate models that predict medical in
 
 | File Type | Link |
 |-----------|-------|
-| 📓 Notebook | **[Regression Notebook – Insurance Charges]([notebooks/regression_final/regression_bethspornitz.ipynb](https://github.com/BethSpornitz/ml_regression_bethspornitz/blob/main/notebooks/regression_final/ml_regression_final_bethspornitz.ipynb))** |
-| 📝 Peer Review | **[Peer Review Submission](peer_review.md)** |
+| 📓 Notebook | **[Regression Notebook – Insurance Charges](https://github.com/BethSpornitz/ml_regression_bethspornitz/blob/main/notebooks/regression_final/ml_regression_final_bethspornitz.ipynb)** |
+| 📝 Peer Review | **[Peer Review Submission](https://github.com/BethSpornitz/ml_regression_bethspornitz/blob/main/notebooks/peer_review.md)** |
+
 
 ---
 
