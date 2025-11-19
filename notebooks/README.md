@@ -146,6 +146,16 @@ This project walks through the complete regression workflow:
 
 ---
 
+### How to Use the Interactive What-If Cost Predictor
+
+- Create and activate the virtual environment as described above.
+- Open `regression_final_bethspornitz.ipynb` in VS Code or Jupyter Lab.
+- Run all cells.
+- Scroll to the section **"Bonus: Interactive What-If Cost Predictor"**.
+- Use the sliders (Age, BMI, Children, Smoker, Region) to see the predicted cost update in real time.
+
+---
+
 ## 🧪 Engineered Features Used
 - `bmi_over_30` (obesity indicator)  
 - `age_squared` (nonlinear age effects)  
@@ -165,8 +175,9 @@ This project walks through the complete regression workflow:
 | `notebooks/peer_review.md` 
 | `README.md` 
 
----
 
+
+---
 ## 🧾 Acknowledgements  
 - Instructor: **Dr. Denise Case**  
 - Dataset Source: **Kaggle – Insurance Dataset**  
