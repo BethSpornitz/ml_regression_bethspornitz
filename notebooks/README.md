@@ -169,13 +169,12 @@ This project walks through the complete regression workflow:
 
 ## 📁 Repository Structure
 
-| File | Purpose |
-|------|---------|
-| `notebooks/regression_final/regression_bethspornitz.ipynb` 
-| `notebooks/data/insurance.csv` 
-| `notebooks/peer_review.md` 
-| `README.md` 
-
+| File / Folder | Purpose |
+|---------------|---------|
+| `regression_final/ml_regression_final_bethspornitz.ipynb` | Main regression analysis notebook (Final Project) |
+| `regression_final/data/insurance.csv` | Dataset used in this project |
+| `peer_review.md` | Peer review submission for this assignment |
+| `README.md` | Project instructions, setup, and clickable links |
 
 
 ---
